@@ -75,7 +75,7 @@ class EncryptionViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        state = .decrypted("Lorem ipsum dolor sit er elit lamet")
+        state = .decrypted("This is a test!")
         
         do {
             let key = try Shared.keypair.publicKey().data()
@@ -105,7 +105,7 @@ class EncryptionViewController: NSViewController {
     }
     
     @IBAction func reset(_ sender: Any) {
-        state = .decrypted("Lorem ipsum dolor sit er elit lamet")
+        state = .decrypted("This is a test!")
     }
     
     func encrypt() {
