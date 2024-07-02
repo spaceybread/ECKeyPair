@@ -37,6 +37,8 @@ class EncryptionViewController: NSViewController {
     @IBOutlet weak var encryptDecryptTextView: NSTextView!
     @IBOutlet weak var encryptDecryptButton: NSButton!
     @IBOutlet weak var resetButton: NSButton!
+    @IBOutlet weak var decryptField: NSButton!
+    @IBOutlet weak var decryptButton: NSButton!
     
     enum State {
         case decrypted(String)
@@ -51,17 +53,18 @@ class EncryptionViewController: NSViewController {
                 case let .decrypted(message):
                     encryptDecryptTextView.string = message
                     encryptDecryptButton.title = "Encrypt"
-                    encryptDecryptTitleLabel.title = "Unencrypted (plain text)"
+                    //encryptDecryptTitleLabel.title = "Unencrypted (plain text)"
                     encryptDecryptButton.isHidden = false
                     resetButton.isHidden = true
+                    //decryptButton.title = "whadda hell"
                 case let .encrypted(text):
                     encryptDecryptTextView.string = text
                     encryptDecryptButton.title = "Decrypt"
-                    encryptDecryptTitleLabel.title = "Encrypted"
+                    //encryptDecryptTitleLabel.title = "Encrypted"
                     resetButton.isHidden = true
                 case let .error(error):
                     encryptDecryptTextView.string = "Error: \(error)"
-                    encryptDecryptTitleLabel.title = "Error"
+                    //encryptDecryptTitleLabel.title = "Error"
                     encryptDecryptButton.isHidden = true
                     resetButton.isHidden = false
                 }
